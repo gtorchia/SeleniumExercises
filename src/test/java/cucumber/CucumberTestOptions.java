@@ -25,7 +25,7 @@ public class CucumberTestOptions {
     }
 
     @AfterClass
-    public void tearDown(){
+    public static void tearDown(){
         BaseTests.closeBrowser();
     }
 }
