@@ -5,7 +5,6 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import pageobject.ResponsableGamblingPage;
 import utils.BaseTests;
@@ -18,7 +17,6 @@ public class ResponsibleGamblingStepDefs {
 
     public ResponsibleGamblingStepDefs(BaseTests stepData) {
         this.stepData = stepData;
-
     }
 
     @Given("^Navigate to home page$")
