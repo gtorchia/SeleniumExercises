@@ -1,5 +1,5 @@
 Feature: Responsible Gambling
-  As a uuser, I want to check if the responsible of gambling is displayed on te main page
+  As a user, I want to check if the responsible of gambling is displayed on te main page
 
 
   Scenario: manage gambling problem
