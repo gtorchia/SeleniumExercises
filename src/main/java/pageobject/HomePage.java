@@ -18,8 +18,6 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"productSelected\"]/a" )
     public WebElement sportTab;
 
-    @FindBy (css="//*[@id=\"footerSub\"]/div/ul/li/a[1]")
-    public WebElement responsabileGambling;
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -33,6 +31,7 @@ public class HomePage {
          wait.until(elementToBeClickable(sportTab));
          */
     }
+
 
 
 
