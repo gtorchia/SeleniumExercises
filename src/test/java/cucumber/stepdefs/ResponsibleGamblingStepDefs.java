@@ -1,10 +1,10 @@
 package cucumber.stepdefs;
 
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pageobject.ResponsableGamblingPage;
 import utils.BaseTests;
@@ -19,9 +19,9 @@ public class ResponsibleGamblingStepDefs {
         this.stepData = stepData;
     }
 
-    @Given("^Navigate to home page$")
-    public void navigateToHomePage() {
-        stepData.launchApplication();
+    @Given("^Navigate to home page \"([^\"]*)\"$")
+    public void navigateToHomePage(String url) {
+        stepData.launchApplication(url);
         responsableGambling = new ResponsableGamblingPage(stepData.getWebDriver());
     }
 
