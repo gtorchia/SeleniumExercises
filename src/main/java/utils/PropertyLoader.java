@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -19,15 +20,17 @@ public class PropertyLoader {
 
     public static String loadProperty(String name, String fromResource) {
         Properties props = new Properties();
-        InputStream input ;
+        InputStream input;
         try {
             input = new FileInputStream(fromResource);
             props.load(input);
             input.close();
-        } catch (IOException e) {
+            return props.getProperty(name);
+        } catch ( IOException e ) {
             log.info("Unable to load property for file: " + fromResource);
+            e.printStackTrace();
+            return e.getMessage();
         }
-        return props.getProperty(name);
     }
 
 }

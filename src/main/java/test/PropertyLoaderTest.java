@@ -1,10 +1,13 @@
 package test;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import utils.PropertyLoader;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 
 import static org.hamcrest.core.Is.is;
@@ -34,6 +37,11 @@ public class PropertyLoaderTest {
     public void loadSpecialCharsProperty() {
         String match ="@*@*";
         assertThat( "The value of variable passed is "+ match , null, is(PropertyLoader.loadProperty(match)));
+    }
+
+    @Test
+    public void loadPropertyWhenConfigurationFileNotFound(){
+        assertEquals(" (The system cannot find the path specified)", PropertyLoader.loadProperty("PIPPO",""));
     }
 
     @Test
