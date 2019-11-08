@@ -3,7 +3,11 @@ package test;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import utils.PropertyLoader;
 
+import java.lang.reflect.Constructor;
+
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class PropertyLoaderTest {
@@ -17,8 +21,19 @@ public class PropertyLoaderTest {
     }
 
     @Test
-    public void loadProperty() {
+    public void loadNullProperty() {
+      assertNull("The property is null", PropertyLoader.loadProperty(""));
+    }
 
+    @Test
+    public void loadBlankValueProperty() {
+        assertNotEquals("The property is blank"," ", PropertyLoader.loadProperty(" "));
+    }
+
+    @Test
+    public void loadSpecialCharsProperty() {
+        String match ="@*@*";
+        assertThat( "The value of variable passed is "+ match , null, is(PropertyLoader.loadProperty(match)));
     }
 
     @Test
