@@ -74,7 +74,6 @@ public class BaseTests {
                 System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
             }
         }
-
     }
 
     private static void setFirefoxDriverProperty() {
