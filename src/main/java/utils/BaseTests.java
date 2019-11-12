@@ -16,7 +16,6 @@ public class BaseTests {
     private final static Logger log = Logger.getLogger(BaseTests.class.getName());
 
 
-
     private static WebDriver webDriver;
     protected static HomePage homePage;
 
@@ -49,17 +48,17 @@ public class BaseTests {
         return webDriver;
     }
 
-    protected static WebDriver setDriverProperty(String driverToSet)  {
+    protected static WebDriver setDriverProperty(String driverToSet) {
         WebDriver webDriverToset = null;
         if ( driverToSet != null ) {
             switch (driverToSet) {
                 case "chrome":
                     setChromeDriverProperty();
-                    webDriverToset =  new ChromeDriver();
+                    webDriverToset = new ChromeDriver();
                     break;
                 case "firefox":
                     setFirefoxDriverProperty();
-                    webDriverToset =  new FirefoxDriver();
+                    webDriverToset = new FirefoxDriver();
                     break;
             }
         }
@@ -69,10 +68,13 @@ public class BaseTests {
     private static void setChromeDriverProperty() {
 
         if ( System.getProperty("os.name").contains("Windows") ) {
-            System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
         } else {
-            System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+            if ( System.getProperty("os.name").contains("Linux") ) {
+                System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+            }
         }
+
 
     }
 
