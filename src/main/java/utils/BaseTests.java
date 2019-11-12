@@ -75,7 +75,6 @@ public class BaseTests {
             }
         }
 
-
     }
 
     private static void setFirefoxDriverProperty() {
