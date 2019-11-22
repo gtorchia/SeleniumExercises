@@ -40,8 +40,8 @@ public class PropertyLoaderTest {
     }
 
     @Test
-    public void loadPropertyWhenConfigurationFileNotFound(){
-        assertEquals(" (The system cannot find the path specified)", PropertyLoader.loadProperty("PIPPO",""));
+    public void loadPropertyWhenConfigurationFileNotFound ( ) {
+        assertEquals (" (The system cannot find the path specified)" , PropertyLoader.loadProperty ("PIPPO" , ""));
     }
 
     @Test

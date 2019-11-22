@@ -2,10 +2,10 @@ FROM maven:3.6.1-jdk-8-alpine AS MAVEN_TOOL_CHAIN
 
 WORKDIR /seleniumexercises
 
-COPY . ./
+COPY . /seleniumexercises/
 
 RUN ls -lRt driver
 
-RUN sleep 30
+RUN chmod +x driver
 
-RUN mvn verify test
+RUN mvn  test

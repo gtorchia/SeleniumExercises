@@ -4,8 +4,6 @@ PATH_TEST_ROOT=..
 cd ${PATH_TEST_ROOT}
 echo "### Running from " $(pwd)
 
-
-
 echo "### Removing target dir "
 rm -rf ./target
 
