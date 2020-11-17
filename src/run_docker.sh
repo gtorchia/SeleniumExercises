@@ -19,6 +19,5 @@ PASSED=$?
 #echo "### Copying report folder from container to host"
 #CONTAINER_ID=$(docker container list --all --last 1 --format "{{ .ID }}")
 
-
 #echo "### Finished  tests"
 #exit ${PASSED}
